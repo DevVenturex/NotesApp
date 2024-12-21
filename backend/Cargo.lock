@@ -179,6 +179,7 @@ dependencies = [
  "diesel",
  "diesel-derive-enum",
  "dotenv",
+ "getrandom",
  "jsonwebtoken",
  "lettre",
  "r2d2",

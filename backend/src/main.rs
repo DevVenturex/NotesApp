@@ -6,14 +6,9 @@ use diesel::r2d2::ConnectionManager;
 use dotenv::dotenv;
 use tower_http::cors::CorsLayer;
 use tracing_subscriber::filter::LevelFilter;
+use backend::AppState;
 use backend::data::db::{DBClient, PgPool};
 use backend::utils::config::Config;
-
-#[derive(Debug, Clone)]
-pub struct AppState {
-    pub env: Config,
-    pub db_client: DBClient,
-}
 
 #[tokio::main]
 async fn main() {

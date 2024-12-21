@@ -2,7 +2,7 @@ use chrono::prelude::*;
 use diesel::{Insertable, Queryable, Selectable};
 use serde::{Serialize, Deserialize };
 
-#[derive(diesel_derive_enum::DbEnum, Debug, Clone, Deserialize, Serialize)]
+#[derive(diesel_derive_enum::DbEnum, Debug, Clone, Deserialize, Serialize, PartialEq)]
 #[ExistingTypePath = "crate::schema::sql_types::UserRole"]
 pub enum UserRole {
     Admin,
@@ -18,7 +18,7 @@ impl UserRole {
     }
 }
 
-#[derive(Selectable, Queryable, Insertable, Serialize, Deserialize, Debug)]
+#[derive(Selectable, Queryable, Insertable, Serialize, Deserialize, Clone, Debug)]
 #[diesel(table_name = crate::schema::users)]
 pub struct User {
     pub id: uuid::Uuid,

@@ -1,12 +1,23 @@
+extern crate core;
+
 pub mod schema;
 pub mod models;
 pub mod utils;
 pub mod data;
 pub mod errors;
+pub mod middleware;
 
 use diesel::prelude::*;
 use dotenv::dotenv;
 use std::env;
+use crate::data::DBClient;
+use crate::utils::config::Config;
+
+#[derive(Debug, Clone)]
+pub struct AppState {
+    pub env: Config,
+    pub db_client: DBClient,
+}
 
 pub fn establish_connection() -> PgConnection {
     dotenv().ok();
