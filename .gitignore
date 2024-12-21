@@ -1,5 +1,5 @@
 /backend/target/
 /frontend/target/
 **/*.log
-.env
+/backend/.env
 .idea

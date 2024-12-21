@@ -6,6 +6,7 @@ pub mod utils;
 pub mod data;
 pub mod errors;
 pub mod middleware;
+pub mod mail;
 
 use diesel::prelude::*;
 use dotenv::dotenv;
