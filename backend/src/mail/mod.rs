@@ -1,2 +1,2 @@
-mod sendmail;
-mod mails;
+pub mod sendmail;
+pub mod mails;

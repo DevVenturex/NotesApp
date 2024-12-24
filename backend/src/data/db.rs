@@ -1,6 +1,6 @@
 use async_trait::async_trait;
-use chrono::{DateTime, NaiveDateTime, Utc};
-use diesel::{ExpressionMethods, Insertable, OptionalExtension, PgConnection, QueryDsl, RunQueryDsl};
+use chrono::NaiveDateTime;
+use diesel::{ExpressionMethods, OptionalExtension, PgConnection, QueryDsl, RunQueryDsl};
 use diesel::r2d2::{ConnectionManager, Pool};
 use diesel::result::Error as DieselError;
 use tokio::task;
